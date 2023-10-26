@@ -5,8 +5,8 @@ use super::{
 };
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
-use std::cmp::Ordering;
-use std::ops::{Add, Div, Mul, Neg, Rem, Sub};
+use core::cmp::Ordering;
+use core::ops::{Add, Div, Mul, Neg, Rem, Sub};
 
 /// Pitch representation in the form of a MIDI-esque Step.
 #[derive(Debug, Copy, Clone)]

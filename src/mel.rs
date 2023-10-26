@@ -4,8 +4,8 @@ use super::{
 };
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
-use std::cmp::Ordering;
-use std::ops::{Add, Div, Mul, Neg, Rem, Sub};
+use core::cmp::Ordering;
+use core::ops::{Add, Div, Mul, Neg, Rem, Sub};
 
 /// Mel value representation
 ///     - based on the Mel scale coined by Stevens, Volkmann and Newman in 1937.

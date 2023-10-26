@@ -4,8 +4,8 @@ use super::{
 };
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
-use std::cmp::Ordering;
-use std::ops::{Add, Div, Mul, Neg, Rem, Sub};
+use core::cmp::Ordering;
+use core::ops::{Add, Div, Mul, Neg, Rem, Sub};
 
 pub const MAX: calc::Hz = 20_000.0;
 pub const MIN: calc::Hz = 20.0;

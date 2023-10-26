@@ -3,7 +3,7 @@ use crate::utils::modulo;
 use num_traits::{FromPrimitive, PrimInt as Int, ToPrimitive};
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
-use std::cmp::Ordering;
+use core::{cmp::Ordering, ops};
 
 pub const TOTAL_LETTERS: u8 = 12;
 
@@ -153,7 +153,7 @@ impl<T: Int> ToLetter for T {
     }
 }
 
-impl<T: Int> ::std::ops::Add<T> for Letter {
+impl<T: Int> ops::Add<T> for Letter {
     type Output = Letter;
     fn add(self, rhs: T) -> Letter {
         let semitones = modulo(rhs.to_i64().unwrap(), 12).to_i16().unwrap();
@@ -161,7 +161,7 @@ impl<T: Int> ::std::ops::Add<T> for Letter {
     }
 }
 
-impl<T: Int> ::std::ops::Sub<T> for Letter {
+impl<T: Int> ops::Sub<T> for Letter {
     type Output = Letter;
     fn sub(self, rhs: T) -> Letter {
         let semitones = modulo(rhs.to_i64().unwrap(), 12).to_i16().unwrap();
@@ -169,14 +169,14 @@ impl<T: Int> ::std::ops::Sub<T> for Letter {
     }
 }
 
-impl ::std::ops::Add for Letter {
+impl ops::Add for Letter {
     type Output = Letter;
     fn add(self, rhs: Letter) -> Letter {
         self + rhs.to_u8().unwrap()
     }
 }
 
-impl ::std::ops::Sub for Letter {
+impl ops::Sub for Letter {
     type Output = Letter;
     fn sub(self, rhs: Letter) -> Letter {
         self - rhs.to_i16().unwrap()
